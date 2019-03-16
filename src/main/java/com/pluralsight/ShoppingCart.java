@@ -21,7 +21,23 @@ public class ShoppingCart {
  public void addCartItem(CartItem cartItem) {
   cartItems.add(cartItem);
  }
+ 
+ /*public void deleteCartItem(Book book, int quantity) {
+	   CartItem cartItem = new CartItem(book, quantity);
+	   cartItems.remove(cartItem);
+	   calculateOrderTotal();
+	 }
+*/
+ public void deleteCartItem(int index) {
+	 
+	 try {
+		 cartItems.remove(index);
 
+	 } catch (IndexOutOfBoundsException  e) {
+		 System.out.println("Invalid option");
+	}
+	 }
+ 
  public CartItem getCartItem(int iItemIndex) {
   CartItem cartItem = null;
   if(cartItems.size()>iItemIndex) {
